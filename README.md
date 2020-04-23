@@ -2,7 +2,7 @@
 [![AUR version](https://img.shields.io/npm/v/@alfsnd/vue-bootstrap-select.svg)](https://github.com/Sandalf/vue-bootstrap-select)
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/react.svg)](https://github.com/Sandalf/vue-bootstrap-select)
 
-# @alfsnd/vue-bootstrap-select
+# @makstech/vue-bootstrap-select
 A vue version of [bootstrap select](https://github.com/snapappointments/bootstrap-select/)
 
 # Demo
@@ -12,13 +12,13 @@ A vue version of [bootstrap select](https://github.com/snapappointments/bootstra
 # Install
 
 ```shell
-npm install @alfsnd/vue-bootstrap-select --save
+npm install @makstech/vue-bootstrap-select --save
 ```
 
 # Usage
 
 ```js
-import VSelect from '@alfsnd/vue-bootstrap-select'
+import VSelect from '@makstech/vue-bootstrap-select'
 
 export default {
   name: 'app',
@@ -39,6 +39,10 @@ export default {
     <v-select :options="[{value: 1, text: 'Item 1'}, {value: 2, text: 'Item 2'}]" v-model="selectedValue" />
   </div>
 </template>
+
+<style lang="scss">
+@import "~bootstrap-select/sass/bootstrap-select.scss";
+</style>
 ```
 
 ### Passing options
@@ -64,6 +68,7 @@ And arrays of objects
 | labelSearchPlaceholder | placeholder text for search input | String | Search | |
 | options | list of options | Array | [] | |
 | searchable | display search input | Boolean | false |  |
+| searchClass | search input class |
 | showDefaultOption | sets the select title is set as an option | Boolean | false | |
 | textProp | the option's prop that is displayed as the option's text | String | text | |
 | valueProp | the option's prop that is used to find the selected value | String | value |

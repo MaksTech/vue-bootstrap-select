@@ -4,11 +4,11 @@
     <div class="options">
       <p><b>Options:</b></p>
       <div>
-        <input type="checkbox" v-model="disabledName">
+        <input type="checkbox" v-model="disabledName" />
         disabled
       </div>
       <div>
-        <input type="checkbox" v-model="searchableName">
+        <input type="checkbox" v-model="searchableName" />
         searchable
       </div>
     </div>
@@ -16,68 +16,69 @@
       v-model="selectedName"
       :options="names"
       :disabled="disabledName"
-      :searchable="searchableName"/>
+      :searchable="searchableName"
+    />
     <h2>Array of objects</h2>
     <div class="options">
       <p><b>Options:</b></p>
       <div>
-        <input type="checkbox" v-model="disabledContinent">
+        <input type="checkbox" v-model="disabledContinent" />
         disabled
       </div>
       <div>
-        <input type="checkbox" v-model="searchableContinent">
+        <input type="checkbox" v-model="searchableContinent" />
         searchable
-      </div>      
+      </div>
     </div>
     <VSelect
       v-model="selectedContinent"
       :options="contients"
       :disabled="disabledContinent"
       disabled-prop="inactive"
-      :searchable="searchableContinent"/>
+      :searchable="searchableContinent"
+    />
   </div>
 </template>
 
 <script>
-import VSelect from "@/vue-bootstrap-select";
+import VSelect from '@/vue-bootstrap-select';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    VSelect
+    VSelect,
   },
   data() {
     return {
       names: [
-        "John Doe",
-        "Olive Yew",
-        "Aida Bugg",
-        "Teri Dactyl",
-        "Paige Turner"
+        'John Doe',
+        'Olive Yew',
+        'Aida Bugg',
+        'Teri Dactyl',
+        'Paige Turner',
       ],
       contients: [
-        { value: 0, text: "Africa" },
-        { value: 1, text: "America" },
-        { value: 2, text: "Asia" },
-        { value: 3, text: "Europe" },
-        { value: 4, text: "Oceania" },
-        { value: 5, text: "Antartica" }
+        { value: 0, text: 'Africa' },
+        { value: 1, text: 'America' },
+        { value: 2, text: 'Asia' },
+        { value: 3, text: 'Europe' },
+        { value: 4, text: 'Oceania' },
+        { value: 5, text: 'Antartica' },
       ],
       selectedName: null,
       searchableName: false,
       disabledName: false,
       selectedContinent: null,
       searchableContinent: false,
-      disabledContinent: false
+      disabledContinent: false,
     };
-  }
+  },
 };
 </script>
 
-
-<style lang="scss" scoped>
+<style lang="scss">
 #app {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -87,6 +88,9 @@ export default {
 
 .options {
   text-align: left;
-  padding: 1em 0em;
+  padding: 1em 0;
 }
+
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);
+@import '~bootstrap-select/sass/bootstrap-select';
 </style>

@@ -2,6 +2,7 @@
 import vue from 'rollup-plugin-vue';
 import buble from 'rollup-plugin-buble';
 import uglify from 'rollup-plugin-uglify-es';
+import commonjs from '@rollup/plugin-commonjs';
 import minimist from 'minimist';
 
 const argv = minimist(process.argv.slice(2));
@@ -11,14 +12,19 @@ const config = {
   output: {
     name: 'VueBootstrapSelect',
     exports: 'named',
+    globals: {
+      'vue-clickaway': 'vueClickaway',
+    },
   },
   plugins: [
+    commonjs(),
     vue({
       css: true,
       compileTemplate: true,
     }),
     buble(),
   ],
+  external: ['vue-clickaway'],
 };
 
 // Only minify browser (iife) version
